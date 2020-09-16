@@ -18,6 +18,8 @@ module Zoom
 
         raise AuthenticationError, build_error(response) if code == 124
         raise Error, build_error(response) if code >= 300
+
+        response # return response
       end
 
       def build_error(response)
